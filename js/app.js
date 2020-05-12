@@ -1,8 +1,19 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * app.js */
+/**
+ * Initialize the game when the "Start Game" button is clicked.
+ */
+let game;
+const button = document.querySelector('#btn__reset')
+button.addEventListener('click', function () {
+  game = new Game;
+  game.startGame();
+});
 
-// const game = new Game();
-
-const game = new Game();
-game.getRandomPhrase().addPhraseToDisplay();
+/**
+ * Add an event listener to pass the clicked button down to the interaction handler.
+ */
+const qwerty = document.querySelector('#qwerty');
+qwerty.addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    game.handleInteraction(e.target);
+  }
+});
