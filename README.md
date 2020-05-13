@@ -1,4 +1,4 @@
-# An Object Orientated Game Show app
+# OOP game show app
 
 ![Screenshot of the app being used](ReadMePreview.png)
 
