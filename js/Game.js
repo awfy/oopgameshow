@@ -103,22 +103,27 @@ class Game {
 
   /**
    * Handles onscreen keyboard button clicks.
-   * @param (HTMLButtonElement) button - The clicked button element.
    */
   handleInteraction(button) {
-    const letter = button.textContent;
-    button.disabled = true;
-    if (this.activePhrase.checkLetter(letter)) {
-      button.classList.add('chosen');
-      this.activePhrase.showMatchedLetter(letter);
-      if (this.checkForWin()) {
-        this.gameOver(true);
-      }
-    } else {
-      button.classList.add('wrong');
-      this.removeLife();
-      if (this.missed === 5) {
-        this.gameOver(false);
+    const letter = button.tagName === 'BUTTON' ? button.textContent : button;
+    const buttons = document.querySelectorAll('#qwerty .key');
+    for (let i = 0; i < buttons.length; i++) {
+      const currentButton = buttons[i];
+      if (currentButton.textContent === letter) {
+        currentButton.disabled = true;
+        if (this.activePhrase.checkLetter(letter)) {
+          currentButton.classList.add('chosen');
+          this.activePhrase.showMatchedLetter(letter);
+          if (this.checkForWin()) {
+            this.gameOver(true);
+          }
+        } else {
+          currentButton.classList.add('wrong');
+          this.removeLife();
+          if (this.missed === 5) {
+            this.gameOver(false);
+          }
+        }
       }
     }
   };
