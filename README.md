@@ -1,5 +1,7 @@
 # An Object Orientated Game Show app
 
+[](ReadMePreview.png)
+
 This project is a browser-based, word guessing game called "Phrase Hunter".
 
 It uses JavaScript and OOP (Object-Oriented Programming) to select a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen keyboard or typing them on their device's keyboard.
