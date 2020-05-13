@@ -38,11 +38,16 @@ class Game {
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
 
-
     const qwerty = document.querySelectorAll('#qwerty button');
     for (let i = 0; i < qwerty.length; i++) {
       qwerty[i].disabled = false;
       qwerty[i].className = 'key';
+    }
+
+    this.missed = 0;
+    const lives = document.querySelectorAll('.tries img');
+    for (let i = 0; i < 5; i++) {
+      lives[i].src = 'images/liveHeart.png';
     }
   };
 
@@ -68,18 +73,11 @@ class Game {
   removeLife() {
     this.missed += 1;
     const lives = document.querySelectorAll('.tries img');
-    if (this.missed === 5) {
-      this.gameOver(false);
-      for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
+      if (i < this.missed) {
+        lives[i].src = 'images/lostHeart.png';
+      } else {
         lives[i].src = 'images/liveHeart.png';
-      }
-    } else {
-      for (let i = 0; i < 5; i++) {
-        if (i < this.missed) {
-          lives[i].src = 'images/lostHeart.png';
-        } else {
-          lives[i].src = 'images/liveHeart.png';
-        }
       }
     }
   };
@@ -90,14 +88,15 @@ class Game {
    */
   gameOver(gameWon) {
     const overlay = document.querySelector('#overlay');
-    overlay.classList.remove('start');
-    overlay.style.display = 'block';
+    overlay.style.display = 'flex';
+    overlay.className = '';
     const message = document.querySelector('#game-over-message');
     if (gameWon) {
       message.textContent = 'Congrats! You won!';
       overlay.classList.add('win');
     } else {
       message.textContent = 'Ouch! You lost!';
+      overlay.className = '';
       overlay.classList.add('lose');
     }
   };
@@ -118,6 +117,9 @@ class Game {
     } else {
       button.classList.add('wrong');
       this.removeLife();
+      if (this.missed === 5) {
+        this.gameOver(false);
+      }
     }
   };
 }
