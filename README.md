@@ -1,6 +1,6 @@
-# An Object Orientated Game Show app
+# OOP game show app
 
-[](ReadMePreview.png)
+![Screenshot of the app being used](readMePreview.png)
 
 This project is a browser-based, word guessing game called "Phrase Hunter".
 
