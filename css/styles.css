@@ -1,12 +1,12 @@
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700');
 
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
-  --color-start: #5b85b7;
+  --color-win: #30ac3e;
+  --color-lose: #e03918;
+  --color-start: #1758a8;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
@@ -20,7 +20,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -113,7 +113,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #268035;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -133,14 +133,14 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: #123172;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: #f83a21;
   color: #FFFFFF;
 }
 
@@ -168,7 +168,7 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: #ffffff;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -178,29 +178,17 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #ffffff;
 }
 
 .start {
-  background-color: #3a3f58;
-}
-
-.start a {
-  color: #fff;
+  background-color: var(--color-start);
 }
 
 .win {
   background-color: var(--color-win);
 }
 
-.win a {
-  color: var(--color-win);
-}
-
 .lose {
-  background-color: #f5785f;
-}
-
-.lose a {
-  color: var(--color-lose);
+  background-color: var(--color-lose);
 }

@@ -9,7 +9,8 @@ button.addEventListener('click', function () {
 });
 
 /**
- * Add an event listener to pass the clicked button down to the interaction handler.
+ * Add an event listener to pass the clicked button down to the interaction 
+ * handler.
  */
 const qwerty = document.querySelector('#qwerty');
 qwerty.addEventListener('click', (e) => {
@@ -19,7 +20,8 @@ qwerty.addEventListener('click', (e) => {
 });
 
 /**
- * Add an event listener to pass the key presses down to the interaction handler if they are from a to z.
+ * Add an event listener to pass the key presses down to the interaction 
+ * handler if they are from a to z.
  */
 document.addEventListener('keyup', (e) => {
   const regex = new RegExp('^[a-z]$');
